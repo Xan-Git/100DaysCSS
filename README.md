@@ -1,4 +1,4 @@
-# 100DaysCSS
+# 100 Days of CSS
 
 100 Days of CSS via https://100dayscss.com
 
