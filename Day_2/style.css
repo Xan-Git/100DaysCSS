@@ -1,0 +1,134 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #fff;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.center {
+	background-color: #4eae84;
+	
+	width: 100%;
+	height: 100%;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	position: relative;
+	
+	top: 0px;
+	left: 0px;
+	
+	padding: 16px 0px;
+}
+
+.bar {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+
+    position: relative;
+	
+	width: 80px;
+	height: 8px;
+}
+
+.bar-1 {
+	bottom: 16px;
+
+    animation: barCollapseOne 0.43s ease-in-out forwards;
+    animation: twistOne 0.43s 0.43s ease-in-out forwards;
+}
+
+.bar-2 {
+    animation: barCollapseTwo 0.43s ease-in-out forwards;
+}
+
+.bar-3 {
+	top: 16px;
+
+    animation: barCollapseThree 0.43s ease-in-out forwards;
+    animation: twistThree 0.43s 0.43s ease-in-out forwards;
+
+    z-index: 2;
+}
+
+/*
+@keyframes barCollapseOne {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(24px);
+    }
+}
+
+@keyframes barCollapseThree {
+    0% {
+        transform: translateY(-0px);
+    }
+
+    100% {
+        transform: translateY(-24px);
+    }
+}
+
+*/
+
+/*
+@keyframes barCollapseTwo {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+*/
+
+/*
+@keyframes twistOne {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(45deg);
+    }
+}
+
+@keyframes twistThree {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(135deg);
+    }
+}
+*/
