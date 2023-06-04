@@ -1,0 +1,218 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #fff;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.center {
+    z-index: 8;
+
+    background-color: #272c34;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes dim {
+    0% {
+        opacity: 0%;
+    }
+
+    25% {
+        opacity: 100%;
+    }
+
+    75% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
+}
+
+.circle-frame {
+    z-index: 12;
+    overflow: hidden;
+
+    background-color: #86defa;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    position: relative;
+
+    animation: dim 4000ms infinite ease-in-out;
+}
+
+.sky {
+    z-index: 13;
+
+    background-color: #86defa;
+}
+
+.sun {
+    z-index: 14;
+
+    background-color: #ffef3f;
+
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+
+    position: absolute;
+
+    offset-path: path("M-20,100 q110,-160 220,0");
+    animation: sun 4000ms infinite ease-in-out;
+}
+
+@keyframes sun {
+    0% {
+        offset-distance: 0%;
+    }
+
+    20% {
+        offset-distance: 25%;
+    }
+
+    25% {
+        offset-distance: 25%;
+    }
+
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+.pyramid {
+    z-index: 14;
+
+    background-color: #fff;
+
+    width: 118px;
+    height: 60px;
+
+    position: absolute;
+    bottom: 60px;
+    left: 32px;
+}
+
+.pyr-left {
+    clip-path: polygon(0% 100%, 50% 0%, 65% 100%);
+    animation: pyr-left 4000ms infinite ease-in-out
+}
+
+@keyframes pyr-left {
+    0% {
+        background-color: #fff;
+    }
+
+    35% {
+        background-color: #fff;
+    }
+
+    100% {
+        background-color: hsl(0, 0%, 65%);
+    }
+}
+
+.pyr-right {
+    clip-path: polygon(50% 0%, 65% 100%, 100% 100%);
+
+    animation: pyr-right 4000ms infinite ease-in-out;
+}
+
+@keyframes pyr-right {
+    0% {
+        background-color: #ccc;
+    }
+
+    35% {
+        background-color: #ccc;
+    }
+
+    100% {
+        background-color: #fff;
+    }
+}
+
+.sand {
+    z-index: 14;
+
+    background-color: #efde7f;
+
+    width: 100%;
+    height: 61px;
+
+    position: absolute;
+    bottom: 0px;
+}
+
+.shadow {
+    z-index: 15;
+    background-color: #bfb266;
+
+    width: 220px;
+    height: 40px;
+    
+    position: absolute;
+    bottom: 21px;
+    left: -20px;
+
+    animation: shadow 4000ms infinite ease-in-out;
+}
+
+@keyframes shadow {
+    0% {
+        clip-path: polygon(22% 0%, 78% 0%, 80% 20%);
+    }
+
+    20% {
+        clip-path: polygon(22% 0%, 78% 0%, 100% 50%);
+    }
+
+    25% {
+        clip-path: polygon(22% 0%, 78% 0%, 100% 50%);
+    }
+
+    100% {
+        clip-path: polygon(22% 0%, 78% 0%, 0% 50%);
+    }
+}
+
+/* 165 - 435 -> 110 - 290
+d = 180
+r = 90
+sun 50 ~ 33 1/3 ~ 32px diameter = 16px radius
+sand 250 from bottom = 166 2/3
+pyramid around 60px in height
+Leaves around 33px within either side of the circle on the side
+about 118px across
+
