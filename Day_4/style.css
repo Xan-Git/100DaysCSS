@@ -1,0 +1,148 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #fff;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.frame {
+    background-color: #df6765;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 6px 6px 12px 1px rgba(0, 0, 0, 0.4);
+
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+
+}
+
+.outer {
+    width: 5.75rem;
+    height: 5.75rem;  
+
+    animation: outer 4000ms infinite ease-in-out;
+}
+
+
+.middle {
+    width: 3.75rem;
+    height: 3.75rem;
+
+    animation: middle 4000ms infinite ease-in-out;
+}
+
+
+.inner {
+    width: 1.75rem;
+    height: 1.75rem;
+
+    animation: inner 4000ms infinite ease-out;
+}
+
+@keyframes outer {
+    0% {
+        transform: scale(0%);
+    }
+
+    20% {
+        transform: scale(100%);
+    }
+
+    80% {
+        transform: scale(100%);
+    }
+
+    100% {
+        transform: scale(0%);
+    }
+}
+
+@keyframes middle {
+    0% {
+        transform: scale(0%);
+    }
+
+    15% {
+        transform: scale(0%);
+    }
+
+    30% {
+        transform: scale(100%);
+    }
+
+    70% {
+        transform: scale(100%);
+    }
+
+    90% {
+        transform: scale(0%);
+    }
+
+    100% {
+        transform: scale(0%);
+    }
+}
+
+@keyframes inner {
+    0% {
+        transform: scale(0%);
+    }
+
+    30% {
+        transform: scale(0%);
+    }
+
+    40% {
+        transform: scale(100%);
+    }
+
+    60% {
+        transform: scale(100%);
+    }
+
+    80% {
+        transform: scale(0%);
+    }
+
+    100% {
+        transform: scale(0%);
+    }
+}
+
+/* 
+outer: 232 -> 154 || 92px -> 5.75rem
+medium: 256 -> 170 || 60px -> 3.75rem
+inner: 278 -> 186 || 28px -> 1.75rem
+
+time: 4s
+*/
