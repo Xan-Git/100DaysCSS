@@ -1,0 +1,290 @@
+
+:root {
+    --bg-color: #4ea6a1;
+    --header-color: #eebb6d;
+    --chart-red: #f47876;
+    --chart-blue: #7da2fb;
+    --weekdays-text: #949494;
+    --graph-line: #f2f2f2;
+}
+
+* {
+    overflow: hidden;
+}
+
+p {
+    margin: 0;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #fff;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.frame {
+    background-color: var(--bg-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.graphic {
+    width: 70%;
+    height: 55%;
+
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.header {
+    background-color: var(--header-color);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    color: #fff;
+
+    height: 30%;
+}
+
+.header-left {
+
+    padding: 1rem;
+
+    .weekly-report {
+        text-transform: uppercase;
+        font-weight: 500;
+
+        font-size: 0.9rem;
+    }
+
+    .dates {
+        font-size: 0.7rem;
+        padding-left: 2px;
+    }
+}
+
+.header-right {
+    padding: 1rem;
+    text-align: right;
+
+    .revenue {
+        font-size: 0.7rem;
+        font-weight: 400;
+    }
+
+    .amount {
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+}
+
+.chart {
+    background-color: #fff;
+    height: 70%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.graph {
+   /* background-color: lightblue; */
+    width: 100%;
+    height: 40%;
+    padding: 0.5rem;
+    position: relative;
+
+    overflow: visible;
+
+    .line {
+        background-color: var(--graph-line);
+        width: 100%;
+        height: 1px;
+        position: absolute;
+    }
+
+    .top-line {
+        top: 0px;
+    }
+    .center-line {
+        top: 50%;
+    }
+    .bottom-line {
+        bottom: 0px;
+    }
+}
+
+.plot-line {
+    z-index: 2;
+    position: absolute;
+}
+
+.point {
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    z-index: 3;
+    overflow: visible;
+}
+.point-1 { left: 6%; }
+.point-2 { left: 20%; }
+.point-3 { left: 34%; }
+.point-4 { left: 48%; }
+.point-5 { left: 60%; }
+.point-6 { left: 73%; }
+.point-7 { left: 86%; }
+
+.red-1 { bottom: 30px; }
+.red-2 { bottom: 60px; }
+.red-3 { bottom: 54px; }
+.red-4 { bottom: 62px; }
+.red-5 { bottom: 38px; }
+.red-6 { bottom: 32px; }
+.red-7 { bottom: 58px; }
+
+.blue-1 { bottom: 15px; }
+.blue-2 { bottom: 25px; }
+.blue-3 { bottom: 12px; }
+.blue-4 { bottom: 20px; }
+.blue-5 { bottom: 16px; }
+.blue-6 { bottom: 8px; }
+.blue-7 { bottom: 14px; }
+
+
+.red-point {
+    background-color: var(--chart-red);
+}
+
+.blue-point {
+    background-color: var(--chart-blue);
+}
+
+.point:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+.tooltip {
+    position: absolute;
+    padding: 0.4rem;
+    z-index: 16;
+
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 0.7rem;
+
+    top: -35px;
+    left: -15px;
+
+    overflow: visible;
+    visibility: hidden;
+    opacity: 0;
+
+    transition: opacity 400ms ease-out 0ms, transform 400ms ease-out;
+}
+
+.tooltip-red {
+    background-color: var(--chart-red);
+}
+
+.tooltip-blue {
+    background-color: var(--chart-blue);
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--chart-red) transparent transparent transparent;
+
+    top: 25px;
+    left: 12px;
+}
+
+.legend {
+    display: flex;
+    justify-content: flex-end;
+
+    font-size: .65rem;
+    font-weight: 400;
+
+    .views, .purchases {
+        padding: 1rem;
+
+        position: relative;
+        overflow: visible;
+
+        margin-left: 0.8rem;
+    }
+
+    .views::before, .purchases::before {
+        content: "-";
+        color: transparent;
+        font-size: 0.2rem;
+        padding-left: .75rem;
+        border-radius: 5px;
+        
+        position: absolute;
+        bottom: 20px;
+        left: -.4rem;
+    }
+
+    .views::before {
+        background-color: var(--chart-red);
+    }
+
+    .purchases::before {
+        background-color: var(--chart-blue);
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    padding-top: 0.4rem;
+
+    color: var(--weekdays-text);
+    font-size: 0.6rem;
+}
+
+
+
+
+
+/*
+    w-90 -> 60 || 400-120 = 280 -> 70%
+    h-135 -> 90 || 400-180 = 220 -> 55%
+    header h-92px || 62px -> 15.5% of 400 or 33% of 180
+    graph h 138px -> 92px
+    
+    56px for either half -> 37.3 + 37.3 + 1 +2 = 77.6
+    or 78px basically
+
+*/
